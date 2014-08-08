@@ -1,0 +1,940 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"opt",
+				"optionSelected"
+			],
+			[
+				"triggre",
+				"triggered"
+			],
+			[
+				"a",
+				"a	<a href=\"mailto:\"> "
+			],
+			[
+				"sales",
+				"sales_tax_tot"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"f",
+				"font-style"
+			],
+			[
+				"now",
+				"noway"
+			],
+			[
+				"pos",
+				"posY"
+			],
+			[
+				"firs",
+				"firstChild"
+			],
+			[
+				"ba",
+				"background-size"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"va",
+				"var"
+			],
+			[
+				"fla",
+				"flag"
+			],
+			[
+				"ps",
+				"pos"
+			],
+			[
+				"tile",
+				"tile2"
+			],
+			[
+				"he",
+				"height	Attr"
+			],
+			[
+				"set",
+				"setAttribute"
+			],
+			[
+				"8",
+				"80px"
+			],
+			[
+				"player",
+				"playerX"
+			],
+			[
+				"tot_",
+				"tot_amnt"
+			],
+			[
+				"wh",
+				"where"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"color",
+				"color"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"p",
+				"padding-top"
+			],
+			[
+				"lis",
+				"list-style-type"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"bord",
+				"border-width"
+			],
+			[
+				"border-s",
+				"border-style"
+			],
+			[
+				"l",
+				"link	link - alternate"
+			],
+			[
+				"h",
+				"hr	<hr>"
+			],
+			[
+				"edit",
+				"edit_inv"
+			],
+			[
+				"re",
+				"removeAttr	.removeAttr()"
+			],
+			[
+				"text",
+				"textarea	<textarea>"
+			],
+			[
+				"bre",
+				"break"
+			],
+			[
+				"limit",
+				"limit2"
+			],
+			[
+				"ti",
+				"tile"
+			],
+			[
+				"j",
+				"j"
+			],
+			[
+				"hr",
+				"href	Attr"
+			],
+			[
+				"type",
+				"type"
+			],
+			[
+				"com",
+				"company"
+			],
+			[
+				"te",
+				"temp"
+			],
+			[
+				"da",
+				"date_1"
+			],
+			[
+				"dat",
+				"date_1"
+			],
+			[
+				"p_",
+				"p_bal"
+			],
+			[
+				"x",
+				"x"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"k",
+				"k"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"rem",
+				"removeClass	.removeClass"
+			],
+			[
+				"err",
+				"errDiv"
+			],
+			[
+				"link",
+				"link	link - stylesheet"
+			],
+			[
+				"go",
+				"goPos"
+			],
+			[
+				"pi",
+				"piPos"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"input",
+				"input	input - reset"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"s",
+				"s_id"
+			],
+			[
+				"inner",
+				"innerHTML"
+			],
+			[
+				"to",
+				"totalDeb"
+			],
+			[
+				"tota",
+				"totalCred"
+			],
+			[
+				"tot",
+				"totCred"
+			],
+			[
+				"uns",
+				"unset_userdata"
+			],
+			[
+				"arra",
+				"array"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"eva",
+				"evaluate_credit"
+			],
+			[
+				"cre",
+				"credit_limit"
+			],
+			[
+				"fo",
+				"for	for …"
+			],
+			[
+				"cla",
+				"calc_tot"
+			],
+			[
+				"inn",
+				"innerText"
+			],
+			[
+				"date",
+				"date_1"
+			],
+			[
+				"acc",
+				"acc_ledger"
+			],
+			[
+				"load",
+				"load_model	CI - Load Model"
+			],
+			[
+				"sa",
+				"sale_table"
+			],
+			[
+				"ul",
+				"ul	Tag"
+			],
+			[
+				"purchase",
+				"purchase_frm"
+			],
+			[
+				"fed",
+				"fed_num"
+			],
+			[
+				"fed_ta",
+				"fed_tax"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"gen",
+				"gen_sales_inv"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"en",
+				"endif"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"gener",
+				"general_query"
+			],
+			[
+				"ser",
+				"serial"
+			],
+			[
+				"num_ro",
+				"msql_num_rows"
+			],
+			[
+				"con",
+				"construct	CI - Class Constructor"
+			],
+			[
+				"row",
+				"row2"
+			],
+			[
+				"ge",
+				"gen_inv"
+			],
+			[
+				"file_",
+				"file_name"
+			],
+			[
+				"use",
+				"user_id"
+			],
+			[
+				"is",
+				"is_admin"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"is_",
+				"is_admin"
+			],
+			[
+				"hide",
+				"hide_usr"
+			],
+			[
+				"user",
+				"userdata"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"amount",
+				"amountNum"
+			],
+			[
+				"add",
+				"addClass	addClass"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"functio",
+				"function"
+			],
+			[
+				"loa",
+				"load_view	CI - Load View"
+			],
+			[
+				"fa",
+				"fadeOut	.fadeOut()"
+			],
+			[
+				"border",
+				"border-color"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"funct",
+				"function"
+			],
+			[
+				"borde",
+				"border-width"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"php",
+				"phpinfo"
+			],
+			[
+				"Ca",
+				"CA"
+			],
+			[
+				"A",
+				"Angeles"
+			],
+			[
+				"my",
+				"myHeader"
+			],
+			[
+				"tab",
+				"tabContent"
+			],
+			[
+				"cont",
+				"contentClass"
+			],
+			[
+				"hea",
+				"headerClass"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"conte",
+				"contentID"
+			],
+			[
+				"head",
+				"header"
+			],
+			[
+				"btl",
+				"btlLemon"
+			],
+			[
+				"total",
+				"totalBottles"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"Snippet: ",
+				"Snippet: bs3-form"
+			],
+			[
+				"Package Control: c",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Set Syntax: PHP"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Motasim/Desktop/New folder/k.css",
+		"/C/Users/Motasim/Desktop/New folder/index.html",
+		"/C/wamp/www/FMS/application/models/sales_frm.php",
+		"/C/Users/Motasim/Desktop/Centroid AI/system.html",
+		"/C/Users/Motasim/Desktop/Centroid AI/css/loader.css",
+		"/C/Users/Motasim/Desktop/Centroid AI/css/system.css",
+		"/C/Users/Motasim/Desktop/Centroid AI/index.html",
+		"/C/wamp/www/FMS/application/views/sales_frm.php",
+		"/C/wamp/www/FMS/application/views/inv_pro.php",
+		"/C/wamp/www/FMS/application/views/includes/sidebar.php",
+		"/C/wamp/www/FMS/application/controllers/site.php",
+		"/C/Users/Motasim/Desktop/New folder/video.mp4",
+		"/C/Users/Motasim/Desktop/WumpusWorld/css/custom.css",
+		"/C/Users/Motasim/Downloads/Wompus World/Wompus World/Wompus World/js/my.js",
+		"/C/Users/Motasim/Downloads/Wompus World/Wompus World/Wompus World/index.html",
+		"/C/wamp/www/FMS/application/views/index.php",
+		"/C/wamp/www/FMS/application/models/index.html",
+		"/E/HTML5 Practice/1 (2).html",
+		"/C/wamp/www/FMS/application/models/get_ledger.php",
+		"/C/wamp/www/FMS/application/views/sales_inv.php",
+		"/C/wamp/www/FMS/application/models/general_query.php",
+		"/C/wamp/www/FMS/application/views/emp_pro.php",
+		"/C/wamp/www/FMS/application/views/acc_ledger.php",
+		"/C/wamp/www/FMS/application/views/all_emp.php",
+		"/C/wamp/www/FMS/application/views/p_p_inv.php",
+		"/C/wamp/www/FMS/application/models/purchase_frm.php",
+		"/C/wamp/www/FMS/application/models/voucher_frm.php",
+		"/C/wamp/www/FMS/application/views/voucher_frm.php",
+		"/C/wamp/www/FMS/application/views/p_s_inv.php",
+		"/C/wamp/www/FMS/application/views/sales_tax_inv.php",
+		"/C/wamp/www/FMS/application/views/d_chal.php",
+		"/C/wamp/www/FMS/application/views/purchase_frm.php",
+		"/C/wamp/www/FMS/application/views/add_co.php",
+		"/C/wamp/www/FMS/application/models/add_co.php",
+		"/C/wamp/www/FMS/views.sql",
+		"/C/wamp/www/FMS/application/models/add_pro.php",
+		"/C/wamp/www/FMS/application/controllers/form_process.php",
+		"/C/wamp/www/FMS/application/views/co_pro.php",
+		"/C/wamp/www/FMS/application/views/item_pro.php",
+		"/C/wamp/www/FMS/application/views/all_co.php",
+		"/C/wamp/www/FMS/application/views/all_pro.php",
+		"/C/Downloads/pj_web.sql",
+		"/C/Users/Motasim/Desktop/Wompus World/js/my.js",
+		"/C/Users/Motasim/Desktop/Wompus World/index.html",
+		"/D/export.php",
+		"/C/Users/Motasim/Documents/Wompus World/Wompus World/js/my.js",
+		"/C/wamp/www/FMS/application/controllers/upload.php",
+		"/G/12421411241-smctydlxedition/12421411241-smctydlxedition/SimCity/__Installer/Cleanup.dat",
+		"/C/wamp/www/FMS/application/views/add_pro.php",
+		"/C/wamp/www/FMS/application/views/includes/all_pro.php",
+		"/C/wamp/www/FMS/application/models/add_usr.php",
+		"/G/Google Drive/Teamwork/END_2014_5_19/accounts.dbf",
+		"/C/Users/Motasim/Desktop/UMER/layout.html",
+		"/C/Users/Motasim/Desktop/UMER/css/style.css",
+		"/C/Users/Motasim/Documents/My Games/Crysis_WARHEAD/Profiles/default/profile.xml",
+		"/C/Users/Motasim/Desktop/UMER/koibhi.html",
+		"/C/Users/Motasim/Desktop/UMER/index.html",
+		"/C/wamp/www/FMS/application/models/auth.php",
+		"/C/Program Files (x86)/Origin/Origin.exe",
+		"/C/wamp/www/FMS/application/views/includes/header.php",
+		"/C/wamp/www/FMS/application/controllers/scan_upload.php",
+		"/C/wamp/www/FMS/application/controllers/c_auth.php",
+		"/C/wamp/www/FMS/application/controllers/logout.php",
+		"/C/Users/Motasim/Desktop/New folder/autoexec.cfg",
+		"/C/wamp/www/FMS/application/views/includes/footer.php",
+		"/C/wamp/www/AdminLTE-master/index.html",
+		"/C/wamp/www/FMS/css/ionicons.min.css",
+		"/C/wamp/www/FMS/css/AdminLTE.css",
+		"/C/wamp/www/hma/application/config/config.php",
+		"/C/wamp/www/FMS/application/views/includes/template.php",
+		"/C/wamp/www/FMS/application/views/add_bank.php",
+		"/C/wamp/www/FMS/application/views/add_usr.php",
+		"/C/wamp/www/FMS/application/views/scan_doc.php",
+		"/C/Downloads/UberGallery-v2.4.6/UberGallery-v2.4.6/resources/sample.galleryConfig.ini",
+		"/C/Downloads/UberGallery-v2.4.6/UberGallery-v2.4.6/README.md",
+		"/C/wamp/www/FMS/index.php",
+		"/C/wamp/www/FMS/application/views/includes/print_head.php",
+		"/C/wamp/www/FMS/application/views/includes/print_template.php",
+		"/C/wamp/www/FMS/js/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.css",
+		"/C/wamp/www/FMS/js/jquery-ui-1.10.4.custom/jquery-ui-1.10.4.custom/index.html",
+		"/C/wamp/www/FMS/application/views/mailbox.php",
+		"/G/Google Drive/Teamwork/pj_web (3).sql",
+		"/C/wamp/www/frontaccounting/sales/includes/db/sales_credit_db.inc",
+		"/C/wamp/www/frontaccounting/sales/includes/db/sales_types_db.inc",
+		"/C/wamp/www/frontaccounting/sales/sales_order_entry.php",
+		"/E/Cracked Steam/steamapps/appmanifest_570.acf",
+		"/C/wamp/www/FMS/ui_html/pages/examples/invoice.html",
+		"/C/wamp/www/FMS/sales_inv_view.sql",
+		"/C/wamp/www/FMS - Copy/sales_inv_view.sql",
+		"/C/Users/Motasim/Downloads/sales.sql",
+		"/C/Users/Motasim/Downloads/index.html",
+		"/C/wamp/www/FMS/application/views/includes/print_foot.php",
+		"/C/wamp/www/FMS/application/config/database.php",
+		"/C/Users/Motasim/Desktop/pj_web (1).sql",
+		"/C/Downloads/get.php",
+		"/C/wamp/www/FMS/application/views/login.php",
+		"/C/wamp/www/FMS/application/models/sales_inv.php",
+		"/C/wamp/www/FMS/application/config/autoload.php",
+		"/C/wamp/www/FMS/application/views/add_work.php",
+		"/C/wamp/www/hma/application/views/home.php",
+		"/C/wamp/www/hma/application/models/content_handler.php",
+		"/C/wamp/www/hma/application/controllers/process.php",
+		"/C/wamp/www/FMS/application/models/add_work.php",
+		"/C/wamp/www/AdminLTE-master/pages/forms/advanced.html",
+		"/C/Users/Motasim/Desktop/Acc Ledger Format.htm",
+		"/C/wamp/www/FMS/application/views/purchase_inv.php",
+		"/C/wamp/www/FMS/application/views/calendar.php",
+		"/G/Google Drive/Teamwork/Sales Invoice Format.htm",
+		"/G/Google Drive/Teamwork/Sales Invoice Format.docx",
+		"/G/Google Drive/Teamwork/Sales Invoice Format.mht",
+		"/C/wamp/www/FMS/application/models/add_pro",
+		"/C/wamp/www/FMS/application/controllers/index.html",
+		"/C/wamp/www/FMS/application/header.php",
+		"/C/wamp/www/FMS/ajax/dashboard-boxrefresh-demo.php",
+		"/C/wamp/www/FMS/application/config/config.php",
+		"/C/wamp/www/FMS/application/views/inv_form.php",
+		"/C/Downloads/mysql-master-master-1.2.6/mysql-master-master-1.2.6/INSTALL",
+		"/C/wamp/www/FMS/application/views/data.php",
+		"/D/FMS/application/config/config.php",
+		"/C/Users/Motasim/Desktop/config.php",
+		"/D/FMS/application/views/calendar.php",
+		"/C/wamp/www/AdminLTE-master/pages/examples/lockscreen.html",
+		"/C/wamp/www/FMS/application/config/routes.php",
+		"/C/wamp/www/FMS/application/views/includes/add_pro.php",
+		"/C/wamp/www/hma/application/controllers/site.php",
+		"/C/wamp/www/hma/application/views/includes/header.php",
+		"/C/wamp/www/FMS/application/views/invoice.php",
+		"/C/wamp/www/FMS/application/views/includes/template2.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Wompus",
+			"height='120px' width='80px'",
+			"gr",
+			"name",
+			"l_name",
+			"desig",
+			"pop",
+			"doj",
+			"dob",
+			"Address",
+			"address",
+			"post_address",
+			"qualify",
+			"exp",
+			"prev_empl",
+			"doc",
+			"p_salary",
+			"tile[i+1][j][9]=1;\n",
+			"tile[i+1][j][9]=1;",
+			"[4]",
+			"tile",
+			"23",
+			"[23] =1",
+			"[23]= 1",
+			"[23]=1",
+			"[23] =1",
+			"[23] = 1",
+			"y",
+			"x",
+			"[0] = 0",
+			"10",
+			"sp_records",
+			"s_serial",
+			"p_serial",
+			"s_serial",
+			"p_serial",
+			"s_serial",
+			"s_se",
+			"p_serial",
+			"s_serial",
+			"v_type",
+			"i_unit",
+			"i_s_price",
+			"i_p_price",
+			"i_cat",
+			"i_name",
+			"i_code",
+			"i_unit",
+			"i_s_price",
+			"i_p_price",
+			"i_cat",
+			"i_name",
+			"[i][j]",
+			"i",
+			"j",
+			"3",
+			"doj",
+			"pop",
+			"fathername",
+			"+1",
+			"input",
+			"1",
+			"4",
+			"\"col-xs-3\"",
+			"= ' ';",
+			";",
+			"]",
+			"[1]",
+			"];",
+			"[]",
+			"][];",
+			"80",
+			"88",
+			"65.65pt",
+			"$this->load->model('general_query');",
+			"inv_for",
+			"i_for",
+			"7",
+			"<div class=\"col-md-4\">",
+			"serial",
+			"sale",
+			"purchase_sess",
+			"sales_inv",
+			"get_curr_serial",
+			"font-size:14px",
+			"= ",
+			"                                                        }",
+			"myField",
+			"img",
+			"l_name",
+			"c_ntn",
+			"c_gst",
+			"c_tel",
+			"Workplace",
+			"desc",
+			"style='font-size:18px;",
+			"tyle='font-size:0.2em;",
+			"tyle='font-size:1.2em;",
+			"style='font-size:18px;",
+			"style",
+			"unitPriceSell",
+			"p_price",
+			"Selling",
+			"img src",
+			"img",
+			"calendar",
+			"mailbox",
+			"data_table",
+			"data",
+			"terrview",
+			"wigets.html",
+			"main content",
+			"contentHandler",
+			"<?php foreach ($page_content as $row): ?>\n<?php  echo $row->content;?>\n<?php endforeach; ?>",
+			"	\n",
+			"{\n",
+			"<div id=\"my-map\"></div>",
+			"\">",
+			";\n",
+			");\n",
+			";\n",
+			"\">\n",
+			" \n",
+			">\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"style='font-size:0.1em;",
+			"style='font-size:0.1em';",
+			"style='font-size:0.2em;",
+			"style='font-size:1.2em;",
+			"content_handler"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 171.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

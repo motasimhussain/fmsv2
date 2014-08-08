@@ -1,0 +1,51 @@
+select
+      PreAgg.id,
+      PreAgg.debit,
+      @PrevBal := @PrevBal + PreAgg.debit as total
+   from 
+      ( select
+              YT.id,
+              YT.debit
+           from
+              accounts YT
+           order by
+              YT.id ) as PreAgg,
+      ( select @PrevBal := 0.00 ) as SqlVars
+
+
+
+####################################################
+
+CREATE TRIGGER `update_bal` BEFORE INSERT ON `sp_records` FOR EACH ROW INSERT INTO ledger
+	SELECT
+      PreAgg.id,
+      PreAgg.tot_amnt,
+      @PrevBal := @PrevBal + PreAgg.tot_amnt as balance
+   from 
+      ( select
+              YT.id,
+              YT.tot_amnt
+           from
+              sp_records YT
+           order by
+              YT.id ) as PreAgg,
+      ( select @PrevBal := 0.00 ) as SqlVars
+
+
+####################################################
+
+CREATE TRIGGER `update_bal` BEFORE INSERT ON `sp_records`
+ FOR EACH ROW INSERT INTO ledger
+	SELECT
+      PreAgg.id,
+      PreAgg.tot_amnt,
+      @PrevBal := @PrevBal + PreAgg.tot_amnt as balance
+   from 
+      ( select
+              YT.id,
+              YT.tot_amnt
+           from
+              sp_records YT
+           order by
+              YT.id ) as PreAgg,
+      ( select @PrevBal := 0.00 ) as SqlVars
