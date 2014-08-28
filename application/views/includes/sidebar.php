@@ -5,55 +5,34 @@
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <!-- <li class="<?php echo $invoice ?>">
-                            <a href="<?php echo base_url();?>index.php/site/invoice">
-                                <i class="fa fa-th"></i> <span>Invoice</span>
-                            </a>
-                        </li> -->
-                        <!-- <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-bar-chart-o"></i>
-                                <span>Charts</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Morris</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Flot</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Inline charts</a></li>
-                            </ul>
-                        </li> -->
-                       <!--  <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-laptop"></i>
-                                <span>UI Elements</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                            </ul>
-                        </li> -->
-                        <li class="treeview <?php echo $forms ?>">
-                            <a href="#">
-                                <i class="fa fa-edit"></i> <span>Forms</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
 
-                                 <li><a href="<?php echo base_url();?>index.php/site/set_credit_limit"><i class="fa fa-angle-double-right"></i> Set Credit Limit</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/add_work"><i class="fa fa-angle-double-right"></i> Add Workplace</a></li>
+                        
+
+                        <li class="treeview <?php echo $company ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Company</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/all_co"><i class="fa fa-angle-double-right"></i> Edit/View Companies</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview <?php echo $products ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Products</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/all_items"><i class="fa fa-angle-double-right"></i> Edit/View Products</a></li>
                             </ul>
                         </li>
+
                         <li class="treeview <?php echo $employee ?>">
                             <a href="#">
-     <i class="fa fa-edit"></i> <span>Employee</span>
+                                <i class="fa fa-edit"></i> <span>Employee</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                            
@@ -96,6 +75,30 @@
                                 <!-- <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>
                         </li>
+                        <li class="treeview <?php echo $sales ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Sale Account</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_sale"><i class="fa fa-angle-double-right"></i> Sale Account</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_sale_gst"><i class="fa fa-angle-double-right"></i> Sale GST Account</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_sale_customer"><i class="fa fa-angle-double-right"></i> Customer Account</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_sale_op_bal"><i class="fa fa-angle-double-right"></i> Sale Opening Balance</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo $purchase ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Purchase Account</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_purchase"><i class="fa fa-angle-double-right"></i> Purchase Account</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_purchase_gst"><i class="fa fa-angle-double-right"></i> Purchase GST Account</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_purchase_supplier"><i class="fa fa-angle-double-right"></i> Supplier Account</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/acc_purchase_op_bal"><i class="fa fa-angle-double-right"></i> Purchase Opening Balance</a></li>
+                            </ul>
+                        </li>
                         <li class="treeview <?php echo $ledger ?>">
                             <a href="#">
                                 <i class="fa fa-edit"></i> <span>Ledger</span>
@@ -104,8 +107,6 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/acc_ledger"><i class="fa fa-angle-double-right"></i> Accounts Ledger</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/b_ledger"><i class="fa fa-angle-double-right"></i> Bank Ledger</a></li>
-                                <!-- <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>
                         </li>
                         <li class="treeview <?php echo $inv_list ?>">
@@ -116,6 +117,16 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/sale_list"><i class="fa fa-angle-double-right"></i> Sales List</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/purchase_list"><i class="fa fa-angle-double-right"></i> Purchase List</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview <?php echo $tools ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Tools</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                 <li><a href="<?php echo base_url();?>index.php/site/set_credit_limit"><i class="fa fa-angle-double-right"></i> Set Credit Limit</a></li>
                             </ul>
                         </li>
                 

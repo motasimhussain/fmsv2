@@ -29,6 +29,9 @@ if (uri_string() != 'site/purchase_frm' && ($this->session->userdata('sale_id'))
         <link href="<?php echo base_url(); ?>css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
         <link href="<?php echo base_url(); ?>css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- For Better Print experience -->
+        <link rel="stylesheet" href="<?php echo base_url(); ?>css/print.css" media="print">
        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>

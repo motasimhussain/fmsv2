@@ -142,6 +142,20 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function acc_purchase_op_bal(){
+		$this->load->model('acc_purchase');
+		if($this->acc_purchase->set_op_bal()){
+			redirect('site/acc_purchase_op_bal');
+		}
+	}
+
+	public function acc_sale_op_bal(){
+		$this->load->model('acc_sale');
+		if($this->acc_sale->set_op_bal()){
+			redirect('site/acc_sale_op_bal');
+		}
+	}
+
 }
 
 /* End of file form_process.php */

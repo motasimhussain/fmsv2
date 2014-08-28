@@ -16,6 +16,26 @@
                 <!-- Main content -->
                 <section class="content">
 
+
+                   <!--  Usage: 
+                    $status =  GetServerStatus('http://domain.com',80)
+                    or
+                    $status =  GetServerStatus('IPAddress',80) -->
+                    
+
+                   <?php 
+                   /*
+                    function GetServerStatus($site, $port){
+                        $status = array("OFFLINE", "ONLINE");
+                        $fp = @fsockopen($site, $port, $errno, $errstr, 2);
+                        if (!$fp) {
+                            return $status[0];
+                        } else 
+                          { return $status[1];}
+                    } 
+                    */
+                    ?> 
+
                 <div class="row">
 
                     <div class="col-md-2 col-lg-2"></div>

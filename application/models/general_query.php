@@ -133,6 +133,38 @@ class General_query extends CI_Model {
 	}
 
 
+	////////// Sale Opening Balance //////////
+
+	function del_op_bal($id){
+		$this->db->where('id', $id);
+		$this->db->delete('company');
+		return True;
+	}
+
+	function get_all_op_bal(){
+		$this->db->where("date","0000-00-00");
+		$this->db->where("serial","0");
+		$query = $this->db->get('sales');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+	function get_op_bal_pro($id){
+		$this->db->where('id', $id);
+		$query = $this->db->get('company');
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		}
+	}
+
+
 	/////////// Bank List ////////////
 
 	function del_bank($id){
@@ -346,6 +378,25 @@ class General_query extends CI_Model {
 		if($query->num_rows() > 0){
 			foreach ($query->result() as $row) {
 				$num = $row->serial;
+			}
+		if(!$this->session->userdata('sale_id') && !$this->session->userdata('purchase_id'))
+		{
+			return $num + 1;
+
+		}
+		else
+			return $num;
+
+		}
+	}
+
+	function get_curr_id($s_type){
+
+		$this->db->select_max('id');
+		$query = $this->db->get($s_type);
+		if($query->num_rows() > 0){
+			foreach ($query->result() as $row) {
+				$num = $row->id;
 			}
 		if(!$this->session->userdata('sale_id') && !$this->session->userdata('purchase_id'))
 		{

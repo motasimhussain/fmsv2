@@ -31,16 +31,16 @@ class Sales_frm extends CI_Model {
 			'date' => $this->input->post('date'),
 			'i_name' => $this->input->post('i_name'),
 			'dscr' => (" Sales: "
-						.$this->input->post('qunty').
+						.number_format($this->input->post('qunty'),2).
 						" "
 						.$this->input->post('i_name').
 						$this->input->post('desc').
 						" @ "
-						.$this->input->post('amnt').
+						.number_format($this->input->post('amnt'),2).
 						" Add S.Tax "
 						.$this->input->post('sales_tax').
 						"% = "
-						.$this->input->post('st_num')),
+						.number_format($this->input->post('st_num'),2)),
 
 			'qunty' => $this->input->post('qunty'),
 			'price' => $this->input->post('price'),
@@ -54,6 +54,7 @@ class Sales_frm extends CI_Model {
 			'sale_sess' => $this->session->userdata('sale_id')
 		);
 
+		// $this->update_purchase_credit();
 
 		$query = $this->db->insert('sales',$data);
 
@@ -65,12 +66,52 @@ class Sales_frm extends CI_Model {
 
 	}
 
-function update_purchase_credit(){
-		if($this->db->get_where('purchase_supplier_account', array('cmp_anme' => $cmp_anme), 1)){
-			print_r("hello");
-			die();
-		}
-	}
+// function update_purchase_credit(){
+// 	// $query = $this->db->get_where('purchase_supplier_account', array('acc' => $this->input->post('acc')), 1);
+
+// 	$query = $this->db->query("
+// 		SELECT * FROM 
+// 		purchase_supplier_account WHERE
+// 		acc = '".$this->input->post('acc')."' ORDER BY date DESC LIMIT 1
+// 	");
+
+// 	// $query = $this->db->get($query);
+
+// 	if($query->num_rows() == 1){
+// 		// print_r("hello");
+// 		// die();
+
+// 		$row = $query->row();
+// 		$amount= $row->amount;
+// 		$amount -= $this->input->post('tot_amnt');
+
+// 		$data = array(
+// 			'acc' => $this->input->post('acc'),
+// 			'amount' => $amount
+// 		);
+
+// 		$this->db->insert('purchase_supplier_account',$data);
+
+// 	}else{
+// 		// $data = array(
+
+// 		// 	'acc' => $this->input->post('acc'),
+// 		// 	'amount' => -($this->input->post('tot_amnt'))
+// 		// );
+
+// 		// $query = $this->db->insert('purchase_supplier_account',$data);
+// 		print_r("
+// 			<h1>Opening Supplier Account Not Defined</h1>
+// 			<script>
+// 				function goBack() {
+// 				    window.history.back()
+// 				}
+// 			</script>
+// 			<button onclick='goBack()'>Go Back</button>
+// 			");
+// 		die();
+// 	}
+// }
 
 	
 

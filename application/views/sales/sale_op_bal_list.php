@@ -1,11 +1,9 @@
-
-
-            <!-- Right side column. Contains the navbar and content of the page -->
+ <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">                
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        All Companies
+                        Edit Opening Balance
                         <small>advanced tables</small>
                     </h1>
                     <ol class="breadcrumb">
@@ -22,7 +20,7 @@
 
                             <div class="box">
                                 <div class="box-header">
-                                    <h3 class="box-title">List of all Companies</h3>                                    
+                                    <h3 class="box-title">Opening Balances</h3>                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
                                     <table id="example1" class="table table-bordered table-striped">
@@ -30,23 +28,21 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Company Name</th>
-                                                <th>Address</th>
-                                                <th>Tel</th>
-                                                <th>GST</th>
-                                                <th>NTN</th>
+                                                <th>Type</th>
+                                                <th>Amount</th>
+                                                <th>Description</th>
                                                 <th class="text-center">Edit</th>
                                                 <th class="text-center">Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($all_co as $row):?>
+                                        <?php foreach ($all_op_bal as $row):?>
                                             <tr>
                                                 <td><?php echo $row->id;?></td>
-                                                <td><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/view"><?php echo $row->c_name;?></a></td>
-                                                <td><?php echo $row->c_address;?></td>
-                                                <td><?php echo $row->c_tel;?></td>
-                                                <td><?php echo $row->c_gst;?></td>
-                                                <td><?php echo $row->c_ntn;?></td>
+                                                <td><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/view"><?php echo $row->cmp_name;?></a></td>
+                                                <td><?php echo $row->pay_type;?></td>
+                                                <td><?php echo $row->tot_amnt;?></td>
+                                                <td><?php echo $row->dscr;?></td>
                                                 <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
                                                 <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
                                             </tr>

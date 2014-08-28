@@ -33,8 +33,6 @@
                                                         foreach ($sale_table as $row ) {
                                                             $inv_for = $row->inv_for;
                                                             $cmp_name = $row->cmp_name;
-                                                            $acc = $row->acc;
-                                                            $ref_num = $row->ref_num;
                                                             $bill_num = $row->bill_num;
                                                             $date = $row->date;
                                                         }
@@ -43,7 +41,7 @@
 
                                     
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="inv_for">Invoice for:</label>
+                                        <label class="col-md-4 control-label" for="inv_for">Company:</label>
                                         <div class="col-md-7">
                                             <select id="inv_for" name="inv_for" class="form-control">
                                                 <?php foreach($select_workplace as $row): ?>
@@ -54,7 +52,7 @@
                                     </div>
                                     <!-- Select Basic -->
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="cmp_name">Company Name:</label>
+                                        <label class="col-md-4 control-label" for="cmp_name">Customer:</label>
                                         <div class="col-md-7">
                                             <select id="cmp_name" name="cmp_name" class="form-control">
                                                 <?php foreach($select_company as $row): ?>
@@ -73,17 +71,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="acc">Account:</label>
-                                        <div class="col-md-7">
-                                            <select id="acc" name="acc" class="form-control">
-                                                <?php foreach($select_company as $row): ?>
-                                                <option value="<?php echo $row->id; ?>" <?php if(isset($acc)){if($row->id == $acc){echo " selected";}}?> ><?php echo $row->c_name; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4 control-label" for="serial">Serial # SO:</label>
+                                        <label class="col-md-4 control-label" for="serial">Invoice #:</label>
                                         <div class="col-md-7">
                                             <input id="serial" name="serial" placeholder="" class="form-control input-md" required="" type="text" value="<?php echo $serial;?>">
                                             
@@ -92,7 +80,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="ref_num">Ref #:</label>
                                             <div class="col-md-7">
-                                                <input id="ref_num" name="ref_num" placeholder="" class="form-control input-md" type="text" value="<?php if(isset($ref_num)){echo $ref_num;}?>">
+                                                <input id="ref_num" name="ref_num" placeholder="" class="form-control input-md" type="text" value="<?php echo $s_id;?>">
                                                 
                                             </div>
                                         </div>
@@ -131,9 +119,12 @@
                                                 <select id="wght" name="wght" placeholder="" class="form-control input-md" required=""  class="form-control">
                                                     <option>Kilograms</option>
                                                     <option>Grams</option>
-                                                    <option>Tons</option>
+                                                    <option>Liters</option>
+                                                    <option>Milliliters</option>
                                                     <option>Milligrams</option>
+                                                    <option>Tons</option>
                                                     <option>Pounds</option>
+                                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -185,9 +176,6 @@
                                             <label class="col-md-4 control-label" for="fed_tax">F.E.D Tax:</label>
                                             <div class="col-md-7">
                                                 <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                    <input type="checkbox" id="fed_tax_check">
-                                                    </span>
                                                     <input id="fed_tax" name="fed_tax" class="form-control" placeholder="" type="text">
                                                     <span class="input-group-addon">%</span>
                                                 </div>
@@ -199,7 +187,7 @@
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="fed_num">FED RS.</label>
                                             <div class="col-md-7">
-                                                <input id="fed_num" name="fed_num" placeholder="" class="form-control input-md" type="text" readonly>
+                                                <input id="fed_num" name="fed_num" placeholder="" class="form-control input-md" type="text" >
                                                 
                                             </div>
                                         </div>
@@ -267,49 +255,79 @@
                                         var sales_tax = document.getElementById('sales_tax');
                                         var st_num = document.getElementById('st_num');
                                         var amnt = document.getElementById('amnt');
+                                        var fed_tax = document.getElementById('fed_tax');
+                                        var fed_num = document.getElementById('fed_num');
                                         ppu.onkeyup = function(){
                                             var total = quantity.value * ppu.value;
                                             if(total>0){
                                                 amnt.value = total.toFixed(2);
                                                 if(sales_tax_check.checked){
                                                     var tax = (total/100)*sales_tax.value;
-
+                                                    var f_tax = (total/100)*fed_tax.value;
                                                     st_num.value = tax.toFixed(2);
-
-                                                    tot_amnt.value = total+tax;
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = total+tax+f_tax;
                                                 }else{
-                                                    tot_amnt.value = quantity.value * ppu.value;
+                                                    var f_tax = (total/100)*fed_tax.value;
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = (quantity.value * ppu.value)+f_tax;
                                                 }
                                                 calc_tot();
                                             }
                                         }
                                         quantity.onkeyup = function(){
-                                        var total = quantity.value * ppu.value;
-                                        if(total>0){
-                                            amnt.value = total.toFixed(2);
-                                        if(sales_tax_check.checked){
-                                        var tax = (total/100)*sales_tax.value;
-                                        st_num.value =  tax.toFixed(2);
-                                        tot_amnt.value = total+tax;
-                                        }else{
-                                        tot_amnt.value = quantity.value * ppu.value;
+                                            var total = quantity.value * ppu.value;
+                                            if(total>0){
+                                                amnt.value = total.toFixed(2);
+                                                if(sales_tax_check.checked){
+                                                    var tax = (total/100)*sales_tax.value;
+                                                    var f_tax = (total/100)*fed_tax.value;
+                                                    st_num.value = tax.toFixed(2);
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = total+tax+f_tax;
+                                                }else{
+                                                    var f_tax = (total/100)*fed_tax.value;
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = (quantity.value * ppu.value)+f_tax;
+                                                }
+                                                calc_tot();
+                                            }
                                         }
-                                        calc_tot();
-                                        }
+                                        fed_tax.onkeyup = function(){
+                                            var total = quantity.value * ppu.value;
+                                            if(total>0){
+                                                amnt.value = total.toFixed(2);
+                                                if(sales_tax_check.checked){
+                                                    var tax = (total/100)*sales_tax.value;
+                                                    var f_tax = (total/100)*fed_tax.value;
+                                                    st_num.value = tax.toFixed(2);
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = total+tax+f_tax;
+                                                }else{
+                                                    var f_tax = (total/100)*fed_tax.value;
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = (quantity.value * ppu.value)+f_tax;
+                                                }
+                                                calc_tot();
+                                            }
                                         }
                                         sales_tax.onkeyup = function(){
-                                        var total = quantity.value * ppu.value;
-                                        if(total>0){
-                                            amnt.value = total.toFixed(2);
-                                        if(sales_tax_check.checked){
-                                        var tax = (total/100)*sales_tax.value;
-                                        st_num.value =  tax.toFixed(2);
-                                        tot_amnt.value = total+tax;
-                                        }else{
-                                        tot_amnt.value = quantity.value * ppu.value;
-                                        }
-                                        calc_tot();
-                                        }
+                                            var total = quantity.value * ppu.value;
+                                            if(total>0){
+                                                amnt.value = total.toFixed(2);
+                                                if(sales_tax_check.checked){
+                                                    var tax = (total/100)*sales_tax.value;
+                                                    var f_tax = (total/100)*fed_tax.value;
+                                                    st_num.value = tax.toFixed(2);
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = total+tax+f_tax;
+                                                }else{
+                                                    var f_tax = (total/100)*fed_tax.value;
+                                                    fed_num.value = f_tax.toFixed(2);
+                                                    tot_amnt.value = (quantity.value * ppu.value)+f_tax;
+                                                }
+                                                calc_tot();
+                                            }
                                         }
                                 })();
                                 </script>

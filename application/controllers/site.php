@@ -16,11 +16,15 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['dashboard'] = '';
 			//$this->data['inv_form'] = '';
-			$this->data['forms'] = '';
+			$this->data['tools'] = '';
+			$this->data['company'] = '';
+			$this->data['products'] = '';
 			$this->data['bank'] = '';
 			$this->data['employee'] = '';
 			$this->data['inv_list'] = '';
 			$this->data['invoice'] = '';
+			$this->data['sales'] = '';
+			$this->data['purchase'] = '';
 			$this->data['ledger'] = '';
 			$this->data['calendar'] = '';
 			$this->data['mailbox'] = '';
@@ -128,6 +132,7 @@ class Site extends CI_Controller {
 		}
 
 		$this->data['serial'] = $this->general_query->get_curr_serial('sales');
+		$this->data['s_id'] = $this->general_query->get_curr_id('sales');
 		$this->data['invoice'] = ' active';
 		$this->data['main_content'] = 'sales_frm';
 		$this->load->view('includes/template', $this->data);
@@ -168,7 +173,7 @@ class Site extends CI_Controller {
 	/////////////////// ADD AND EDIT COMPANY///////////////
 
 	public function add_co(){
-		$this->data['forms'] = ' active';
+		$this->data['company'] = ' active';
 		$this->data['main_content'] = 'add_co';
 		$this->load->view('includes/template', $this->data);
 	}
@@ -188,7 +193,7 @@ class Site extends CI_Controller {
 			$this->data['co_det'] = 'no content';
 		}
 		$this->data['action'] = $action;
-		$this->data['forms'] = ' active';
+		$this->data['company'] = ' active';
 		$this->data['main_content'] = 'co_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -199,7 +204,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['all_co'] = 'no content';
 		}
-		$this->data['forms'] = ' active';
+		$this->data['company'] = ' active';
 		$this->data['main_content'] = 'all_co';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -246,7 +251,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['select_workplace'] = 'no content';
 		}
-		$this->data['forms'] = ' active';
+		$this->data['products'] = ' active';
 		$this->data['main_content'] = 'add_pro';
 		$this->load->view('includes/template', $this->data);
 	}
@@ -444,7 +449,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['select_company'] = 'no content';
 		}
-		$this->data['forms'] = ' active';
+		$this->data['tools'] = ' active';
 		$this->data['main_content'] = 'set_credit_limit';
 		$this->load->view('includes/template', $this->data);
 	}
@@ -540,7 +545,7 @@ class Site extends CI_Controller {
 			$this->data['item_det'] = 'no content';
 		}
 		$this->data['action'] = $action;
-		$this->data['forms'] = ' active';
+		$this->data['products'] = ' active';
 		$this->data['main_content'] = 'item_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -551,7 +556,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['all_items'] = 'no content';
 		}
-		$this->data['forms'] = ' active';
+		$this->data['products'] = ' active';
 		$this->data['main_content'] = 'all_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -623,7 +628,164 @@ class Site extends CI_Controller {
 		$this->load->view('includes/template2', $this->data);
 	}
 
-}
 
+
+
+ 	/////// Vouchers /////////
+
+	public function jv(){
+		$this->data['main_content'] = 'vouchers/journal';
+		$this->load->view('includes/template', $this->data);
+	}
+	
+	public function rv(){
+		$this->data['main_content'] = 'vouchers/reciept';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	/////// Purchase Accounts //////////
+
+	public function acc_purchase(){
+
+		$this->load->model('acc_purchase');
+		if($this->acc_purchase->get_entries()){
+			$this->data['data'] = $this->acc_purchase->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
+		$this->data['purchase'] = ' active';
+		$this->data['main_content'] = 'ledger/acc_purchase';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function acc_purchase_gst(){
+
+		$this->load->model('acc_purchase_gst');
+		if($this->acc_purchase_gst->get_entries()){
+			$this->data['data'] = $this->acc_purchase_gst->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
+		$this->data['purchase'] = ' active';
+		$this->data['main_content'] = 'ledger/acc_purchase_gst';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function acc_purchase_supplier(){
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->load->model('acc_purchase_supplier');
+		if($this->acc_purchase_supplier->get_entries()){
+			$this->data['data'] = $this->acc_purchase_supplier->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
+		$this->data['purchase'] = ' active';
+		$this->data['main_content'] = 'ledger/acc_purchase_supplier';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function acc_purchase_op_bal(){
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['purchase'] = ' active';
+		$this->data['main_content'] = 'ledger/acc_purchase_op_bal';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	/////// Sale Account ////////
+
+	public function acc_sale(){
+
+		$this->load->model('acc_sale');
+		if($this->acc_sale->get_entries()){
+			$this->data['data'] = $this->acc_sale->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
+		$this->data['sales'] = ' active';
+		$this->data['main_content'] = 'sales/acc_sale';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function acc_sale_gst(){
+
+		$this->load->model('acc_sale_gst');
+		if($this->acc_sale_gst->get_entries()){
+			$this->data['data'] = $this->acc_sale_gst->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
+		$this->data['sales'] = ' active';
+		$this->data['main_content'] = 'sales/acc_sale_gst';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function acc_sale_customer(){
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->load->model('acc_sale_customer');
+		if($this->acc_sale_customer->get_entries()){
+			$this->data['data'] = $this->acc_sale_customer->get_entries();
+		}else{
+			$this->data['data'] = 'no entries';
+		}
+		$this->data['sales'] = ' active';
+		$this->data['main_content'] = 'sales/acc_sale_customer';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function acc_sale_op_bal(){
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['sales'] = ' active';
+		$this->data['main_content'] = 'sales/acc_sale_op_bal';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	// public function co_list($id,$action){
+	// 	if ($action == "delete") {
+	// 	$this->load->model('general_query');
+
+	// 	if($this->general_query->del_co($id)){
+	// 		redirect('site/all_co');
+	// 	}
+	// 	}
+	// 	if($this->general_query->get_co_pro($id)){
+	// 		$this->data['co_det'] = $this->general_query->get_co_pro($id);
+	// 		$this->data['co_id'] = $id;
+	// 	}else{
+	// 		$this->data['co_det'] = 'no content';
+	// 	}
+	// 	$this->data['action'] = $action;
+	// 	$this->data['company'] = ' active';
+	// 	$this->data['main_content'] = 'co_pro';
+	// 	$this->load->view('includes/template2', $this->data);
+	// }
+
+	public function all_op_bal(){
+		if($this->general_query->get_all_op_bal()){
+			$this->data['all_op_bal'] = $this->general_query->get_all_op_bal();
+		}else{
+			$this->data['all_op_bal'] = 'no content';
+		}
+		$this->data['sales'] = ' active';
+		$this->data['main_content'] = 'sales/sale_op_bal_list';
+		$this->load->view('includes/template2', $this->data);
+	}
+
+}
 /* End of file site.php */
 /* Location: ./application/controllers/site.php */

@@ -13,14 +13,25 @@ class Purchase_frm extends CI_Model {
 		$data = array(
 			'inv_for' => $this->input->post('inv_for'),
 			'cmp_name' => $this->input->post('cmp_name'),
-			'pay_type' => "credit",
+			'pay_type' => "debit",
 			'acc' => $this->input->post('acc'),
 			'serial' => $this->input->post('serial'),
 			'ref_num' => $this->input->post('ref_num'),
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
 			'i_name' => $this->input->post('i_name'),
-			'dscr' => (" Purchase: ".$this->input->post('qunty')." ".$this->input->post('i_name').$this->input->post('desc')." @ ".$this->input->post('amnt')." Add S.Tax ".$this->input->post('sales_tax')."% = ".$this->input->post('st_num')),
+			'dscr' => (" Purchase: "
+				.number_format($this->input->post('qunty'),2).
+				" "
+				.$this->input->post('i_name').
+				$this->input->post('desc').
+				" @ "
+				.number_format($this->input->post('amnt'),2).
+				" Add S.Tax "
+				.$this->input->post('sales_tax').
+				"% = "
+				.number_format($this->input->post('st_num'),2)
+			),
 			'qunty' => $this->input->post('qunty'),
 			'price' => $this->input->post('price'),
 			'wght' => $this->input->post('wght'),
@@ -28,7 +39,7 @@ class Purchase_frm extends CI_Model {
 			'sales_tax_tot' => $this->input->post('st_num'),
 			'fed_tax' => $this->input->post('fed_tax'),
 			'amnt' => $this->input->post('amnt'),
-			'tot_amnt' => $this->input->post('tot_amnt')*(-1),
+			'tot_amnt' => $this->input->post('tot_amnt'),
 			'amnt_in_wrd' => $this->input->post('amnt_wrd'),
 			'sale_sess' => $this->session->userdata('purchase_id')
 		);

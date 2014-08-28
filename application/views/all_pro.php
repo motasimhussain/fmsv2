@@ -82,19 +82,20 @@
         <!-- page script -->
         <script type="text/javascript">
             $(function() {
-                $('#example1').dataTable({
-                    "bPaginate": true,
-                    "bLengthChange": false,
-                    "bFilter": false,
-                    "bSort": true,
-                    "bInfo": true,
-                    "bAutoWidth": true,
-                    "aoColumns": [
-                                        null,
-                                        null //put as many null values as your columns
+                // $('#example1').dataTable({
+                //     "bPaginate": true,
+                //     "bLengthChange": false,
+                //     "bFilter": false,
+                //     "bSort": true,
+                //     "bInfo": true,
+                //     "bAutoWidth": true,
+                //     "aoColumns": [
+                //                         null,
+                //                         null //put as many null values as your columns
 
-                    ]
-                });
+                //     ]
+                // });
+                $('#example1').dataTable();
                 $("#example1_filter").addClass('pull-right');
             });
 
