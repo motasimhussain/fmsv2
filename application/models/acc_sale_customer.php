@@ -85,7 +85,7 @@ class Acc_sale_customer extends CI_Model {
 
 			foreach ($query->result() as $row) {
 				if ($row->pay_type == "debit") {
-					$prev_bal += $row->tot_amnt;
+					$prev_bal -= $row->tot_amnt;
 				}else{
 					$prev_bal += $row->tot_amnt;
 				}

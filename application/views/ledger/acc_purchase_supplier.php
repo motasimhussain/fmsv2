@@ -164,7 +164,7 @@
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>Credit</p>
               </td>
-              <td width=75 valign=top style='width:56.45pt;border-top:solid windowtext 2.25pt;
+              <td width=75 valign=top style='width:60pt;border-top:solid windowtext 2.25pt;
               border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 2.25pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -178,7 +178,7 @@
               <p class="pull-right" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>Opening Balance:</p>
               </td>
-              <td width=296 colspan=1 valign=top style='width:221.7pt;border-top:none;
+              <td width=296 colspan=1 valign=top style='width:60pt;border-top:none;
               border-left:none;border-bottom:solid windowtext 2.25pt;border-right:solid windowtext 2.25pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
@@ -260,7 +260,7 @@
 
               <?php } ?>
 
-              <td width=75 valign=top style='width:56.45pt;border:none;border-right:solid windowtext 1.0pt;
+              <td width=75 valign=top style='width:60pt;border:none;border-right:solid windowtext 1.0pt;
               padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>
@@ -288,7 +288,7 @@
               <p id="totCred" style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo(number_format($cred,2)); ?></p>
               </td>
-              <td width=75 valign=top style='width:56.45pt;border:solid windowtext 1.0pt;
+              <td width=75 valign=top style='width:60pt;border:solid windowtext 1.0pt;
               border-left:none;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php echo number_format($temp,2 ); ?></p>
@@ -303,7 +303,7 @@
               <td width=85 style='border:none'></td>
               <td width=1 style='border:none'></td>
               <td width=86 style='border:none'></td>
-              <td width=75 style='border:none'></td>
+              <td width=60 style='border:none'></td>
              </tr>
             </table>
           </div>

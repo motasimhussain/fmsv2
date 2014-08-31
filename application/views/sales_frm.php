@@ -65,8 +65,8 @@
                                         <label class="col-md-4 control-label" for="pay_type">Voucher type:</label>
                                         <div class="col-md-7">
                                             <select id="pay_type" name="pay_type" class="form-control">
-                                                <option value="debit">Debit</option>
                                                 <option value="credit">Credit</option>
+                                                <option value="debit">Debit</option>
                                             </select>
                                         </div>
                                     </div>

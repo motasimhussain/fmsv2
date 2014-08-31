@@ -74,20 +74,6 @@
                                           </div>
                                         </div>
 
-                                        <div class="form-group">
-                                          <label class="col-md-4 control-label" for="op_bal">Opening Balance</label>  
-                                          <div class="col-md-4">
-                                          <input id="op_bal" name="op_bal" placeholder="Opening Balance" class="form-control input-md" type="text" required>
-                                            
-                                          </div>
-                                          <div class="col-md-2">
-                                            <select id="op_bal_type" name="op_bal_type" class="form-control">
-                                                <option value="purchase">Credit</option>
-                                                <option value="sales">Debit</option>
-                                            </select>
-                                          </div>
-                                        </div>
-
                                         <!-- Button -->
                                         <div class="form-group">
                                           <label class="col-md-4 control-label" for="singlebutton"></label>

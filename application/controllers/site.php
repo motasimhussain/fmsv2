@@ -72,6 +72,12 @@ class Site extends CI_Controller {
 		}
 	}
 
+	public function led_temp()
+	{
+		$this->data['main_content'] = 'ledger_template';
+		$this->load->view('includes/template', $this->data);
+	}
+
 	// this marks the start of the forms included in the Forms //
 
 	public function add_work(){
