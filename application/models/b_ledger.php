@@ -20,15 +20,14 @@ class B_ledger extends CI_Model {
 			$this->load->model('general_query');
 
 			$bank = $this->general_query->get_bank($this->input->post('b_id'));
-			$company = $this->general_query->get_company($this->input->post('coname'));
 
 			$fields = array(
-				'c_id' => $this->input->post('coname'),
 				'b_id' => $this->input->post('b_id')
 			);
 
 			$this->db->where($fields);
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
+			$this->db->order_by('date','asc');
 
 			$query = $this->db->get('bank_trans');
 			if($query->num_rows() > 0){
@@ -40,8 +39,7 @@ class B_ledger extends CI_Model {
 				// $data["en_date"] = $date_2;
 				$arr = array('st_date' => $date_1, 
 							 'en_date' => $date_2,
-							 'bank' => $bank,
-							 'company' => $company
+							 'bank' => $bank
 							);
 				$this->session->set_userdata($arr);
 
@@ -52,19 +50,52 @@ class B_ledger extends CI_Model {
 		}
 	}
 
+	// public function get_opening_bal($date_1){
+
+	// 		$query = "SELECT SUM(amnt) AS bal FROM bank_trans WHERE c_id = '".$this->input->post('coname')."' AND date < '".$date_1."' ORDER BY date DESC LIMIT 1";
+
+	// 		$result = $this->db->query($query);
+
+
+	// 	if($result->num_rows() > 0){
+			
+	// 			$arr= array(
+	// 					'prev_bal' => $result->row('bal')
+	// 				);
+	// 			$this->session->set_userdata($arr);
+
+	// 	}else{
+	// 		$arr= array(
+	// 					'prev_bal' => 0
+	// 				);
+	// 			$this->session->set_userdata($arr);
+	// 	}
+	// }
+
 	public function get_opening_bal($date_1){
 
-			$query = "SELECT SUM(amnt) AS bal FROM bank_trans WHERE c_id = '".$this->input->post('coname')."' AND date < '".$date_1."' ORDER BY date DESC LIMIT 1";
-
-			$result = $this->db->query($query);
-
-
-		if($result->num_rows() > 0){
 			
-				$arr= array(
-						'prev_bal' => $result->row('bal')
-					);
-				$this->session->set_userdata($arr);
+		$this->db->where("date <",$date_1);
+		$this->db->order_by('date','asc');
+		$query = $this->db->get("bank_trans");
+
+
+		if($query->num_rows() > 0){
+			
+			$prev_bal = 0;
+
+			foreach ($query->result() as $row) {
+				if ($row->trans_type == "debit") {
+					$prev_bal += $row->amnt;
+				}else{
+					$prev_bal -= $row->amnt;
+				}
+			}
+
+			$arr= array(
+					'prev_bal' => $prev_bal
+				);
+			$this->session->set_userdata($arr);
 
 		}else{
 			$arr= array(

@@ -16,8 +16,8 @@ class Acc_purchase_gst extends CI_Model {
 
 
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
-
-			$this->db->order_by('date','asc');
+			$this->db->where('type !=','bank');
+			$this->db->order_by('serial','asc');
 			$query = $this->db->get('acc_purchase');
 
 			if($query->num_rows() > 0){

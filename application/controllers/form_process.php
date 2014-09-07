@@ -134,6 +134,19 @@ class Form_process extends CI_Controller {
 			redirect('site/bank_trans');
 		}
 	}
+	
+	public function bank_cust(){
+		$this->load->model('bank_cust');
+		if ($this->bank_cust->add()){
+			redirect('site/bank_cust');
+		}
+	}
+	public function bank_supp(){
+		$this->load->model('bank_supp');
+		if ($this->bank_supp->add()){
+			redirect('site/bank_supp');
+		}
+	}
 
 	public function edit_bv(){
 		$this->load->model('bank_trans');

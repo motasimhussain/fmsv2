@@ -53,7 +53,10 @@
                                 
                                 <li><a href="<?php echo base_url();?>index.php/site/add_bank"><i class="fa fa-angle-double-right"></i> Add Bank</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/all_bank"><i class="fa fa-angle-double-right"></i> Edit/Delete Banks</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/bank_trans"><i class="fa fa-angle-double-right"></i> Add Bank Transaction</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/bank_cust"><i class="fa fa-angle-double-right"></i> Customer Transaction</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/bank_supp"><i class="fa fa-angle-double-right"></i> Supplier Transaction</a></li>
+                                <!-- <li><a href="<?php echo base_url();?>index.php/site/bank_trans"><i class="fa fa-angle-double-right"></i> Add Bank Transaction</a></li> -->
+                                <li><a href="<?php echo base_url();?>index.php/site/b_ledger"><i class="fa fa-angle-double-right"></i> Bank Ledger</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/all_bv"><i class="fa fa-angle-double-right"></i> Edit/Delete Bank Vouchers</a></li>
 
                             </ul>
@@ -106,7 +109,6 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url();?>index.php/site/acc_ledger"><i class="fa fa-angle-double-right"></i> Accounts Ledger</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/b_ledger"><i class="fa fa-angle-double-right"></i> Bank Ledger</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo $inv_list ?>">

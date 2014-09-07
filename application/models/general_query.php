@@ -497,7 +497,6 @@ class General_query extends CI_Model {
 			return $data;
 		}
 	}
-
 	function get_items(){
 		$this->db->select('i_code,i_name');
 		$query = $this->db->get('items');

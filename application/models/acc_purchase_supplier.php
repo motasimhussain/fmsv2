@@ -25,6 +25,7 @@ class Acc_purchase_supplier extends CI_Model {
 
 			$this->db->where($fields);
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
+			$this->db->order_by('date','asc');
 
 			$query = $this->db->get('purchase');
 			if($query->num_rows() > 0){

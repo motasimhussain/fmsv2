@@ -393,8 +393,8 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['data'] = 'no entries';
 		}
-		$this->data['ledger'] = ' active';
-		$this->data['main_content'] = 'b_ledger';
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'bank/b_ledger';
 		$this->load->view('includes/template', $this->data);
 	}
 
@@ -496,6 +496,49 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'bank_trans';
 		$this->load->view('includes/template', $this->data);
 	}
+
+	public function bank_cust(){
+		if($this->general_query->get_banks()){
+			$this->data['select_bank'] = $this->general_query->get_banks();
+		}else{
+			$this->data['select_bank'] = 'no content';
+		}
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		if($this->general_query->get_voucher_serial()){
+			$this->data['v_serial'] = $this->general_query->get_voucher_serial();
+		}else{
+			$this->data['v_serial'] = 0;
+		}
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'bank/bank_cust';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function bank_supp(){
+		if($this->general_query->get_banks()){
+			$this->data['select_bank'] = $this->general_query->get_banks();
+		}else{
+			$this->data['select_bank'] = 'no content';
+		}
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		if($this->general_query->get_voucher_serial()){
+			$this->data['v_serial'] = $this->general_query->get_voucher_serial();
+		}else{
+			$this->data['v_serial'] = 0;
+		}
+		$this->data['bank'] = ' active';
+		$this->data['main_content'] = 'bank/bank_supp';
+		$this->load->view('includes/template', $this->data);
+	}
+
 
 	public function add_bank(){
 		$this->data['bank'] = ' active';
