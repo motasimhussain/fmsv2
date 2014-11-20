@@ -52,10 +52,6 @@ class Site extends CI_Controller {
 
 	public function index(){
 
-		// $array = $this->general_query->get_cmp_ids();
-		// for ($i=0; $i < sizeof($array); $i++) { 
-		// 	echo $this->general_query->check_credit($array[$i]);
-		// }
 		if($this->general_query->alert_credit()){
 			$arr = $this->general_query->alert_credit();
 			$this->data['limit'] = $arr;
@@ -290,11 +286,6 @@ class Site extends CI_Controller {
 		$this->load->view('includes/print_template', $this->data);
 	}
 	
-	// public function purchase_inv(){
-	// 	$this->data['invoice'] = ' active';
-	// 	$this->data['main_content'] = 'purchase_inv';
-	// 	$this->load->view('includes/template', $this->data);
-	// }
 
 	public function gen_purchase_inv(){
 		$this->load->model('general_query');
