@@ -12,7 +12,6 @@ class Acc_purchase extends CI_Model {
 			// print_r($date_range);
 			// die();
 
-			$this->load->model('general_query');
 
 
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');

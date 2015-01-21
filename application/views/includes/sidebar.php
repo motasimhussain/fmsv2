@@ -61,6 +61,20 @@
 
                             </ul>
                         </li>
+
+                        <li class="treeview <?php echo $vouchers ?>">
+                            <a href="#">
+                                <i class="fa fa-edit"></i> <span>Vouchers</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                
+                                <li><a href="<?php echo base_url();?>index.php/site/reciept_frm"><i class="fa fa-angle-double-right"></i> Reciept Voucher</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/payment_frm"><i class="fa fa-angle-double-right"></i> Payment Voucher</a></li>
+
+                            </ul>
+                        </li>
+
                         <li class="treeview <?php echo $invoice ?>">
                             <a href="#">
                                 <i class="fa fa-edit"></i> <span>Invoices</span>

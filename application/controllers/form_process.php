@@ -27,6 +27,19 @@ class Form_process extends CI_Controller {
 		}
 	}
 
+	public function add_rv(){
+		$this->load->model('rv');
+		if($this->rv->add()){
+			redirect('site/reciept_frm');
+		}
+	}
+	public function add_pv(){
+		$this->load->model('pv');
+		if($this->pv->add()){
+			redirect('site/payment_frm');
+		}
+	}
+
 
 	public function add_bank(){
 		$this->load->model('add_bank');

@@ -22,24 +22,23 @@
   }
 </style>
 
+<?php foreach ($list as $row): ?>
+    
+<?php foreach ($info as $row2): ?>
+
+
 <aside class="right-side">
     <!-- Content Header (Page header) -->
 
     <section class="content-header">
-        <form class="form-inline" method="post" action="<?php echo base_url(); ?>index.php/site/gen_sales_serial">
           <ul class="list-inline">
           <li>
-            <label class="control-label" for="serial">Serial #</label>
+            <a class="btn btn-success" href="<?php echo base_url(); ?>index.php/site/reciept_list">Back</a>
           </li>
-          <li>  
-            <input type="text" class="form-control" id="serial" name="serial">
-          </li>
-
           <li>
-            <button class="btn btn-success" value="submit">Generate</button>
+            <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
           </li>
           </ul>
-        </form>
     </section><!-- Main content -->
 
     <section class="content">
@@ -48,13 +47,13 @@
       <h3 class="text-center"><b>Pak Japan Ink Chemical</b><?php //echo $row2->w_name;?></h3>
       <h5 class="text-center">M-II F92/4, SHERSHAH SITE KARACHI<?php //echo $row2->w_address ?></h5>
 
-      <h4 class="text-center">Journal Voucher</h4>
+      <h4 class="text-center">Payment Voucher</h4>
 
       <!-- <hr/> -->
 
 
-      <span><b>Voucher No. <?php /*insert shit here*/ ?></b></span>
-      <span class="pull-right" ><b>Date: <?php /*insert shit here*/ ?></b></span>
+      <span><b>Voucher No. <?php echo $row->id; ?></b></span>
+      <span class="pull-right" ><b>Date: <?php echo date("d-m-Y",strtotime($row->e_date)); ?></b></span>
       <br/>
       <br/>
 
@@ -62,41 +61,38 @@
         <thead>
           <tr>
             <th>Particulars</th>
-            <th>Debit</th>
-            <th>Credit</th>
+            <th>Chq/Cash Amount</th>
+            <th>Income Tax</th>
+            <th>Net Amount</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
-              <span>130003</span>
-              <span>ALMADINA PLASTIC</span>
+              <span></span>
+              <span><?php echo $row2->c_name; ?></span>
               <br/>
-              <span>RETURN CHEQ</span>
+              <span><?php echo $row->description; ?></span>
             </td>
-            <td>425,952.00</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <span>107005</span>
-              <span>RETURN INK</span>
-              <br/>
-              <span>RETURN CHEQ</span>
-            </td>
-            <td></td>
-            <td>425952.00</td>
+            <td><?php echo $row->amnt; ?></td>
+            <td><?php echo $row->inc_t_amnt ?></td>
+            <td><?php echo $row->amnt + $row->inc_t_amnt; ?></td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <th>Total:</th>
-            <th>425,952.00</th>
-            <th>425,952.00</th>
+            <th><?php echo $row->amnt; ?></th>
+            <th><?php echo $row->inc_t_amnt ?></th>
+            <th id="tot_amnt"><?php echo $row->amnt + $row->inc_t_amnt; ?></th>
           </tr>
         </tfoot>
       </table>
-      <p>Four Hundred Twenty-Five Thousand Nine Hundred Fifty-Two Rupees Only</p>
+
+<?php endforeach; ?>
+<?php endforeach; ?>
+
+      <p id="amnt_wrd"></p>
       <hr class="hrJour">
 
       <div class="row">
@@ -124,3 +120,30 @@
 
     </section>
 </aside>
+
+<script type="text/javascript">
+  (function(){
+
+    var getNum = document.getElementById("tot_amnt");
+
+    console.log("triggered");
+    var num = Math.floor(getNum.innerHTML);
+    var a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
+    var b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
+    function inWords (num) {
+    if ((num = num.toString()).length > 9) return 'overflow';
+    n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+    if (!n) return; var str = '';
+    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'Crore ' : '';
+    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'Lakh ' : '';
+    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'Thousand ' : '';
+    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred ' : '';
+    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+    return str;
+    }
+    console.log(inWords(num));
+    document.getElementById("amnt_wrd").innerHTML = inWords(num);
+
+  })();
+    
+</script>

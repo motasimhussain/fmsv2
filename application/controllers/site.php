@@ -20,6 +20,7 @@ class Site extends CI_Controller {
 			$this->data['company'] = '';
 			$this->data['products'] = '';
 			$this->data['bank'] = '';
+			$this->data['vouchers'] = '';
 			$this->data['employee'] = '';
 			$this->data['inv_list'] = '';
 			$this->data['invoice'] = '';
@@ -244,6 +245,7 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'all_bank';
 		$this->load->view('includes/template2', $this->data);
 	}
+
 
 
 	////////// ADD PRODUCT ////////////
@@ -568,6 +570,93 @@ class Site extends CI_Controller {
 	}
 
 
+	//////////// PAYMENT AND RECIEPT VOUCHERS //////////
+
+	public function reciept_frm(){
+		$this->data['vouchers'] = ' active';
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['main_content'] = 'vouchers/reciept_frm';
+		$this->load->view('includes/template', $this->data);
+	}
+	public function payment_frm(){
+		$this->data['vouchers'] = ' active';
+		if($this->general_query->get_cn()){
+			$this->data['select_company'] = $this->general_query->get_cn();
+		}else{
+			$this->data['select_company'] = 'no content';
+		}
+		$this->data['main_content'] = 'vouchers/payment_frm';
+		$this->load->view('includes/template', $this->data);
+	}
+
+	public function reciept_list($id=0,$action=0){
+		$this->load->model('rv');
+		if ($action == "delete") {
+			if($this->rv->del($id)){
+				redirect('site/reciept_list');
+			}
+		}elseif ($action == "print") {
+			$this->print_reciept($id);
+			return;
+		}
+
+		$q = $this->rv->get_list();
+		if($q){
+			$this->data["list"] = $q;
+		}else{
+			$this->data["list"] = false;
+		}
+		$this->data["main_content"] = "vouchers/reciept_list";
+		$this->load->view('includes/template2', $this->data);
+
+	}
+
+	public function payment_list($id=0,$action=0){
+		$this->load->model('pv');
+		if ($action == "delete") {
+			
+			if($this->pv->del($id)){
+				//redirect('site/payment_list');
+			}
+		}elseif ($action == "print") {
+			$this->print_payment($id);
+			return;
+		}
+
+		$q = $this->pv->get_list();
+		if($q){
+			$this->data["list"] = $q;
+		}else{
+			$this->data["list"] = false;
+		}
+
+		$this->data["main_content"] = "vouchers/payment_list";
+		$this->load->view('includes/template2', $this->data);
+
+	}
+
+	public function print_reciept($id)
+	{
+		$this->load->model('rv');
+		$this->data["info"] = $this->general_query->get_co_pro($id);
+		$this->data["list"] = $this->rv->get_rv($id);
+		$this->data["main_content"] = "vouchers/reciept";
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function print_payment($id)
+	{
+		$this->load->model('pv');
+		$this->data["info"] = $this->general_query->get_co_pro($id);
+		$this->data["list"] = $this->pv->get_pv($id);
+		$this->data["main_content"] = "vouchers/journal";
+		$this->load->view('includes/template2', $this->data);
+	}
+
 	/////// ITEM LIST ////////////
 
 	public function pro_list($id,$action){
@@ -673,15 +762,15 @@ class Site extends CI_Controller {
 
  	/////// Vouchers /////////
 
-	public function jv(){
-		$this->data['main_content'] = 'vouchers/journal';
-		$this->load->view('includes/template', $this->data);
-	}
+	// public function jv(){
+	// 	$this->data['main_content'] = 'vouchers/journal';
+	// 	$this->load->view('includes/template', $this->data);
+	// }
 	
-	public function rv(){
-		$this->data['main_content'] = 'vouchers/reciept';
-		$this->load->view('includes/template', $this->data);
-	}
+	// public function rv(){
+	// 	$this->data['main_content'] = 'vouchers/reciept';
+	// 	$this->load->view('includes/template', $this->data);
+	// }
 
 	/////// Purchase Accounts //////////
 
