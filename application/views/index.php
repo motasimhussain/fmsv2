@@ -16,25 +16,84 @@
                 <!-- Main content -->
                 <section class="content">
 
-
-                   <!--  Usage: 
-                    $status =  GetServerStatus('http://domain.com',80)
-                    or
-                    $status =  GetServerStatus('IPAddress',80) -->
-                    
-
-                   <?php 
-                   /*
-                    function GetServerStatus($site, $port){
-                        $status = array("OFFLINE", "ONLINE");
-                        $fp = @fsockopen($site, $port, $errno, $errstr, 2);
-                        if (!$fp) {
-                            return $status[0];
-                        } else 
-                          { return $status[1];}
-                    } 
-                    */
-                    ?> 
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                        Add
+                                    </h3>
+                                    <p>
+                                        Sales
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="<?php echo base_url(); ?>index.php/site/sales_frm" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        Add
+                                    </h3>
+                                    <p>
+                                        Purchase
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="<?php echo base_url(); ?>index.php/site/purchase_frm" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>
+                                        Add
+                                    </h3>
+                                    <p>
+                                        Reciept Voucher
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="<?php echo base_url(); ?>index.php/site/reciept_frm" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        Add
+                                    </h3>
+                                    <p>
+                                        Payment Voucher
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="<?php echo base_url(); ?>index.php/site/payment_frm" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                    </div>
 
                 <div class="row">
 

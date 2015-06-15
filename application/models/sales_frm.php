@@ -20,7 +20,7 @@ class Sales_frm extends CI_Model {
 			'pay_type' => $this->input->post('pay_type'),
 			'acc' => $this->input->post('acc'),
 			'serial' => $this->input->post('serial'),
-			'ref_num' => $this->input->post('ref_num'),
+			'ref_num' => 'SO# '.$this->input->post('serial'),
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
 			'i_name' => $this->input->post('i_name'),
@@ -59,56 +59,6 @@ class Sales_frm extends CI_Model {
 		}
 
 	}
-
-// function update_purchase_credit(){
-// 	// $query = $this->db->get_where('purchase_supplier_account', array('acc' => $this->input->post('acc')), 1);
-
-// 	$query = $this->db->query("
-// 		SELECT * FROM 
-// 		purchase_supplier_account WHERE
-// 		acc = '".$this->input->post('acc')."' ORDER BY date DESC LIMIT 1
-// 	");
-
-// 	// $query = $this->db->get($query);
-
-// 	if($query->num_rows() == 1){
-// 		// print_r("hello");
-// 		// die();
-
-// 		$row = $query->row();
-// 		$amount= $row->amount;
-// 		$amount -= $this->input->post('tot_amnt');
-
-// 		$data = array(
-// 			'acc' => $this->input->post('acc'),
-// 			'amount' => $amount
-// 		);
-
-// 		$this->db->insert('purchase_supplier_account',$data);
-
-// 	}else{
-// 		// $data = array(
-
-// 		// 	'acc' => $this->input->post('acc'),
-// 		// 	'amount' => -($this->input->post('tot_amnt'))
-// 		// );
-
-// 		// $query = $this->db->insert('purchase_supplier_account',$data);
-// 		print_r("
-// 			<h1>Opening Supplier Account Not Defined</h1>
-// 			<script>
-// 				function goBack() {
-// 				    window.history.back()
-// 				}
-// 			</script>
-// 			<button onclick='goBack()'>Go Back</button>
-// 			");
-// 		die();
-// 	}
-// }
-
-	
-
 }
 
 /* End of file add_pro.php */

@@ -45,18 +45,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($all_bank as $row):?>
-                                            <tr>
-                                                <td><?php echo $row->id;?></td>
-                                                <td><a href="<?php echo base_url(); ?>index.php/site/b_list/<?php echo $row->id?>/view"><?php echo $row->b_name;?></a></td>
-                                                <td><?php echo $row->acc_num;?></td>
-                                                <td><?php echo $row->b_address;?></td>
-                                                <td><?php echo $row->b_tel;?></td>
-                                                <td><?php echo $row->owner;?></td>
-                                                <td class="text-center no-print"><a href="<?php echo base_url(); ?>index.php/site/b_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
-                                                <td class="text-center no-print"><a href="<?php echo base_url(); ?>index.php/site/b_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
-                                            </tr>
+                                        <?php if(isset($all_bank)): ?>
+                                            <?php foreach ($all_bank as $row):?>
+                                                <tr>
+                                                    <td><?php echo $row->id;?></td>
+                                                    <td><a href="<?php echo base_url(); ?>index.php/site/b_list/<?php echo $row->id?>/view"><?php echo $row->b_name;?></a></td>
+                                                    <td><?php echo $row->acc_num;?></td>
+                                                    <td><?php echo $row->b_address;?></td>
+                                                    <td><?php echo $row->b_tel;?></td>
+                                                    <td><?php echo $row->owner;?></td>
+                                                    <td class="text-center no-print"><a href="<?php echo base_url(); ?>index.php/site/b_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
+                                                    <td class="text-center no-print"><a href="<?php echo base_url(); ?>index.php/site/b_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
+                                                </tr>
                                             <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </tbody>
                                        
                                     </table>

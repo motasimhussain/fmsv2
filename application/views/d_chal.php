@@ -77,7 +77,7 @@ if(!empty($row2)):
 <table class="table-bordered">
 	<thead>
 		<tr>
-			<th class="col-xs-1 text-center">Sno</th>
+			<th class="col-xs-1 text-center">S.No</th>
 			<th class="col-xs-9 text-center">Description</th>
 			<th class="col-xs-1 text-center">Quantity</th>
 			<th class="col-xs-1 text-center">Unit</th>
@@ -108,10 +108,11 @@ if(!empty($row2)):
 
 		    </tr>
 	</tbody>
-	<tfoot><th class="col-xs-1 text-center"></th>
-			<th class="col-xs-9 text-center">Total:</th>
-			<th class="col-xs-1 text-center" id="totQty"></th>
-			<th class="col-xs-1 text-center"></th>
+	<tfoot>
+		<th class="col-xs-1 text-center"></th>
+		<th class="col-xs-9 text-center">Total:</th>
+		<th class="col-xs-1 text-center" id="totQty"></th>
+		<th class="col-xs-1 text-center"></th>
 	</tfoot>
 
 	<script type="text/javascript">
@@ -128,6 +129,18 @@ if(!empty($row2)):
 
 
 </table>
+<div class="row">
+	<div class="row text-right" style="padding-right:40px;display:block">
+		<p><b></b></p>
+	</div>
+	&nbsp;
+	&nbsp;
+	<div class="row text-right" style="padding-right:40px;display:block">
+		<p><b>Signature</b></p>
+	</div>
+	
+
+</div>
 </div>
 </section>
 

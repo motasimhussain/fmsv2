@@ -43,7 +43,7 @@ class B_ledger extends CI_Model {
 							);
 				$this->session->set_userdata($arr);
 
-				$this->get_opening_bal($date_1);
+				$this->get_opening_bal($date_1,$this->input->post('b_id'));
 
 				return $data;
 			}
@@ -72,10 +72,12 @@ class B_ledger extends CI_Model {
 	// 	}
 	// }
 
-	public function get_opening_bal($date_1){
+	public function get_opening_bal($date_1,$b_id){
+
 
 			
 		$this->db->where("date <",$date_1);
+		$this->db->where("b_id",$b_id);
 		$this->db->order_by('date','asc');
 		$query = $this->db->get("bank_trans");
 
@@ -95,6 +97,7 @@ class B_ledger extends CI_Model {
 			$arr= array(
 					'prev_bal' => $prev_bal
 				);
+			
 			$this->session->set_userdata($arr);
 
 		}else{

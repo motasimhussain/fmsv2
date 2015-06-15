@@ -218,10 +218,6 @@
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'>
               <?php 
-              $this->load->model('general_query');
-              $co = $this->general_query->get_company($row->c_id);
-              echo $co." ";
-
               echo $row->desc;
 
               ?></p>

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:27015/fmsv2';
+$config['base_url']	= 'http://localhost/fmsv2';
 
 /*
 |--------------------------------------------------------------------------

@@ -27,7 +27,7 @@ class Acc_sale_customer extends CI_Model {
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
 			$this->db->order_by('date','asc');
 
-			$query = $this->db->get('sales');
+			$query = $this->db->get('sp_merge');
 			if($query->num_rows() > 0){
 				foreach ($query->result() as $row) {
 					$data[] = $row;
@@ -77,7 +77,7 @@ class Acc_sale_customer extends CI_Model {
 		$this->db->where("date <",$date_1);
 		$this->db->where('cmp_name', $this->input->post('coname'));
 		$this->db->order_by('date','asc');
-		$query = $this->db->get("sales");
+		$query = $this->db->get("sp_merge");
 
 
 		if($query->num_rows() > 0){

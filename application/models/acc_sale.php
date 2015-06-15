@@ -9,14 +9,12 @@ class Acc_sale extends CI_Model {
 		if(isset($parse_date) && $parse_date!= ""){
 
 			list($date_1, $date_2) = explode(" - ", $parse_date);
-			// print_r($date_range);
-			// die();
 
 			$this->load->model('general_query');
 
 
 			$this->db->where('date BETWEEN "' . $date_1. '" AND "' . $date_2.'"');
-			$this->db->where('type !=','bank');
+			$this->db->where('type =','sale');
 			$this->db->order_by('serial','asc');
 			$query = $this->db->get('acc_sale');
 
@@ -25,29 +23,16 @@ class Acc_sale extends CI_Model {
 					$data[] = $row;
 				}
 
-				// $data["st_date"] = $date_1;
-				// $data["en_date"] = $date_2;
 				$arr = array(
 					'st_date' => $date_1, 
 					'en_date' => $date_2,
 				);
 				$this->session->set_userdata($arr);
-
-				// $this->get_opening_bal($date_1);
 				$this->get_opening_bal($date_1);
 				return $data;
 			}
 
 		}
-
-
-		// $this->db->order_by('date','desc');
-		// $query = $this->db->get('acc_purchase');
-
-		// foreach ($query->result() as $row) {
-		// 	$data[] = $row;
-		// }
-		// return $data;
 	}
 
 	public function get_opening_bal($date_1){

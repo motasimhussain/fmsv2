@@ -217,9 +217,6 @@
               solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
               <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
               normal'><?php 
-                $this->load->model('general_query');
-                $co = $this->general_query->get_company($row->cmp_name);
-                echo $co;
                 echo $row->dscr;?>
 
               </p>

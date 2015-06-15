@@ -49,9 +49,16 @@
                               </div>
                             </div>
 
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="textinput">Date:</label>
+                                <div class="col-md-4" >
+                                    <input id="pickdate" value="<?php echo date('Y-m-d'); ?>" name="date" placeholder="" class="form-control input-md" type="text" value="<?php if(isset($date)){echo $date;}?>">
+                                </div>
+                            </div>
+
                             <!-- Text input-->
                             <div class="form-group">
-                              <label class="col-md-4 control-label" for="description">Amount</label>  
+                              <label class="col-md-4 control-label" for="description">Description</label>  
                               <div class="col-md-4">
                               <textarea id="description" name="description" placeholder="Description" class="form-control" ></textarea>  
                               </div>
@@ -116,11 +123,11 @@
 </aside><!-- /.right-side -->
 
 <script type="text/javascript">
+
 (function(){
   
-
+  var amnt = document.getElementById('amnt');
   amnt.onkeyup = function(){
-    var amnt = document.getElementById('amnt');
     var income_tax = document.getElementById('income_tax');
     var witholding_tax = document.getElementById('witholding_tax');
     var inc_t_amnt = document.getElementById('inc_t_amnt');
@@ -131,6 +138,25 @@
   }
 
 
+  var witholding_tax = document.getElementById('witholding_tax');
+  witholding_tax.onkeyup = function(){
+    var income_tax = document.getElementById('income_tax');
+    var inc_t_amnt = document.getElementById('inc_t_amnt');
+    var wit_t_amnt = document.getElementById('wit_t_amnt');
+
+    inc_t_amnt.value = ((amnt.value/100)*income_tax.value).toFixed(2);
+    wit_t_amnt.value = ((amnt.value/100)*witholding_tax.value).toFixed(2);
+  }
+
+  var income_tax = document.getElementById('income_tax');
+  income_tax.onkeyup = function(){
+    var witholding_tax = document.getElementById('witholding_tax');
+    var inc_t_amnt = document.getElementById('inc_t_amnt');
+    var wit_t_amnt = document.getElementById('wit_t_amnt');
+    inc_t_amnt.value = ((amnt.value/100)*income_tax.value).toFixed(2);
+    wit_t_amnt.value = ((amnt.value/100)*witholding_tax.value).toFixed(2);
+  }
 
 })();
+
 </script>

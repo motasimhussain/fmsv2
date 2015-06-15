@@ -19,7 +19,7 @@ class Bank_supp extends CI_Model {
 
 		$query = $this->db->insert('bank_trans',$data);
 		if($query){
-			return $this->up_supp($desc);
+			return true; //$this->up_supp($desc);
 		}else{
 			return false;
 		}

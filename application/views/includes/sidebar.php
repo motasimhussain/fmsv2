@@ -6,30 +6,6 @@
                             </a>
                         </li>
 
-                        
-
-                        <li class="treeview <?php echo $company ?>">
-                            <a href="#">
-                                <i class="fa fa-edit"></i> <span>Company</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/all_co"><i class="fa fa-angle-double-right"></i> Edit/View Companies</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="treeview <?php echo $products ?>">
-                            <a href="#">
-                                <i class="fa fa-edit"></i> <span>Products</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/site/all_items"><i class="fa fa-angle-double-right"></i> Edit/View Products</a></li>
-                            </ul>
-                        </li>
-
                         <li class="treeview <?php echo $employee ?>">
                             <a href="#">
                                 <i class="fa fa-edit"></i> <span>Employee</span>
@@ -89,7 +65,6 @@
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_challan"><i class="fa fa-angle-double-right"></i> Delivery Challan</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/gen_sales_tax_inv"><i class="fa fa-angle-double-right"></i> Sales Tax Invoice</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/site/all_inv"><i class="fa fa-angle-double-right"></i> View/Edit Invoice</a></li>
-                                <!-- <li><a href="<?php echo base_url();?>index.php/site/inv_form"><i class="fa fa-angle-double-right"></i> Invoice Form</a></li> -->
                             </ul>
                         </li>
                         <li class="treeview <?php echo $sales ?>">
@@ -142,19 +117,17 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                 <li><a href="<?php echo base_url();?>index.php/site/set_credit_limit"><i class="fa fa-angle-double-right"></i> Set Credit Limit</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/add_co"><i class="fa fa-angle-double-right"></i> Add Company</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/all_co"><i class="fa fa-angle-double-right"></i> Edit/View Companies</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/add_pro"><i class="fa fa-angle-double-right"></i> Add Product</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/all_items"><i class="fa fa-angle-double-right"></i> Edit/View Products</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/site/set_credit_limit"><i class="fa fa-angle-double-right"></i> Set Credit Limit</a></li>
                             </ul>
                         </li>
                 
                         <li class="<?php echo $scan_doc; ?>">
                             <a href="<?php echo base_url();?>index.php/site/scan_doc">
                                 <i class="fa fa-dashboard"></i> <span>Scan Documents</span>
-                            </a>
-                        </li>
-
-                        <li class="<?php echo $calendar ?>">
-                            <a href="<?php echo base_url();?>index.php/site/calendar">
-                                <i class="fa fa-calendar"></i> <span>Calendar</span>
                             </a>
                         </li>
                     </ul>

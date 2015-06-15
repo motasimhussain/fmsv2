@@ -16,7 +16,7 @@ class Purchase_frm extends CI_Model {
 			'pay_type' => "debit",
 			'acc' => $this->input->post('acc'),
 			'serial' => $this->input->post('serial'),
-			'ref_num' => $this->input->post('ref_num'),
+			'ref_num' => 'PD# '.$this->input->post('serial'),
 			'bill_num' => $this->input->post('bill_num'),
 			'date' => $this->input->post('date'),
 			'i_name' => $this->input->post('i_name'),
@@ -48,7 +48,7 @@ class Purchase_frm extends CI_Model {
 		$query = $this->db->insert('purchase',$data);
 
 		if($query){
-			return ture;
+			return true;
 		}else{
 			return false;
 		}

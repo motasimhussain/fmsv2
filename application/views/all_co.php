@@ -39,6 +39,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php if(isset($all_co)): ?>
                                         <?php foreach ($all_co as $row):?>
                                             <tr>
                                                 <td><?php echo $row->id;?></td>
@@ -51,6 +52,7 @@
                                                 <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/co_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
                                             </tr>
                                             <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </tbody>
                                        
                                     </table>

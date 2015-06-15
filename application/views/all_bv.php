@@ -38,17 +38,19 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($all_bv as $row):?>
-                                            <tr>
-                                                <td><?php echo $row->id;?></td>
-                                                <td><a href="<?php echo base_url(); ?>index.php/site/bv_pro/<?php echo $row->id?>/view"><?php echo $row->b_id?></a></td>
-                                                <td><?php echo $row->c_id;?></td>
-                                                <td><?php echo $row->ch_num;?></td>
-                                                <td><?php echo $row->date;?></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/bv_pro/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/bv_pro/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
-                                            </tr>
-                                        <?php endforeach; ?>
+                                        <?php if(isset($all_bv)): ?>
+                                            <?php foreach ($all_bv as $row):?>
+                                                <tr>
+                                                    <td><?php echo $row->id;?></td>
+                                                    <td><a href="<?php echo base_url(); ?>index.php/site/bv_pro/<?php echo $row->id?>/view"><?php echo $row->b_id?></a></td>
+                                                    <td><?php echo $row->c_id;?></td>
+                                                    <td><?php echo $row->ch_num;?></td>
+                                                    <td><?php echo $row->date;?></td>
+                                                    <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/bv_pro/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
+                                                    <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/bv_pro/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </tbody>
                                        
                                     </table>

@@ -16,11 +16,30 @@ class Add_bank extends CI_Model {
 		$query = $this->db->insert('banks',$data);
 
 		if($query){
-			return ture;
+			$this->set_op_bal($this->db->insert_id());
+			return true;
 		}else{
 			return false;
 		}
 
+	}
+
+	public function set_op_bal($id){
+		$data = array(
+			'b_id' => $id,
+			'c_id' => 0,
+			'trans_type' => 'debit',
+			'amnt' => $this->input->post('op_bal')
+		);
+
+
+		$query = $this->db->insert('bank_trans',$data);
+
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	function edit(){
@@ -36,7 +55,7 @@ class Add_bank extends CI_Model {
 		$query = $this->db->update('banks',$data);
 
 		if($query){
-			return ture;
+			return true;
 		}else{
 			return false;
 		}

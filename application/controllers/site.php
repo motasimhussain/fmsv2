@@ -15,10 +15,7 @@ class Site extends CI_Controller {
 			die();
 		}else{
 			$this->data['dashboard'] = '';
-			//$this->data['inv_form'] = '';
 			$this->data['tools'] = '';
-			$this->data['company'] = '';
-			$this->data['products'] = '';
 			$this->data['bank'] = '';
 			$this->data['vouchers'] = '';
 			$this->data['employee'] = '';
@@ -176,7 +173,7 @@ class Site extends CI_Controller {
 	/////////////////// ADD AND EDIT COMPANY///////////////
 
 	public function add_co(){
-		$this->data['company'] = ' active';
+		$this->data['tools'] = ' active';
 		$this->data['main_content'] = 'add_co';
 		$this->load->view('includes/template', $this->data);
 	}
@@ -196,7 +193,7 @@ class Site extends CI_Controller {
 			$this->data['co_det'] = 'no content';
 		}
 		$this->data['action'] = $action;
-		$this->data['company'] = ' active';
+		$this->data['tools'] = ' active';
 		$this->data['main_content'] = 'co_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -204,10 +201,8 @@ class Site extends CI_Controller {
 	public function all_co(){
 		if($this->general_query->get_all_co()){
 			$this->data['all_co'] = $this->general_query->get_all_co();
-		}else{
-			$this->data['all_co'] = 'no content';
 		}
-		$this->data['company'] = ' active';
+		$this->data['tools'] = ' active';
 		$this->data['main_content'] = 'all_co';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -238,8 +233,6 @@ class Site extends CI_Controller {
 	public function all_bank(){
 		if($this->general_query->get_all_banks()){
 			$this->data['all_bank'] = $this->general_query->get_all_banks();
-		}else{
-			$this->data['all_bank'] = 'no content';
 		}
 		$this->data['bank'] = ' active';
 		$this->data['main_content'] = 'all_bank';
@@ -255,7 +248,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['select_workplace'] = 'no content';
 		}
-		$this->data['products'] = ' active';
+		$this->data['tools'] = ' active';
 		$this->data['main_content'] = 'add_pro';
 		$this->load->view('includes/template', $this->data);
 	}
@@ -392,13 +385,6 @@ class Site extends CI_Controller {
 	}
 
 	//ledger end //
-
-	public function calendar(){
-		$this->data['calendar'] = ' active';
-		$this->data['main_content'] = 'calendar';
-		$this->load->view('includes/template2',$this->data);
-	}
-
 	
 	//included in forms, is hidden on non-admin login
 
@@ -595,20 +581,21 @@ class Site extends CI_Controller {
 
 	public function reciept_list($id=0,$action=0){
 		$this->load->model('rv');
-		if ($action == "delete") {
+		if ($action === "delete") {
 			if($this->rv->del($id)){
 				redirect('site/reciept_list');
 			}
-		}elseif ($action == "print") {
+		}else if ($action === "print") {
 			$this->print_reciept($id);
+			return;
+		}else if ($action === "edit") {
+			$this->edit_reciept($id);
 			return;
 		}
 
 		$q = $this->rv->get_list();
 		if($q){
 			$this->data["list"] = $q;
-		}else{
-			$this->data["list"] = false;
 		}
 		$this->data["main_content"] = "vouchers/reciept_list";
 		$this->load->view('includes/template2', $this->data);
@@ -625,18 +612,37 @@ class Site extends CI_Controller {
 		}elseif ($action == "print") {
 			$this->print_payment($id);
 			return;
+		}elseif ($action == "edit") {
+			$this->edit_payment($id);
+			return;
 		}
 
 		$q = $this->pv->get_list();
 		if($q){
 			$this->data["list"] = $q;
-		}else{
-			$this->data["list"] = false;
 		}
 
 		$this->data["main_content"] = "vouchers/payment_list";
 		$this->load->view('includes/template2', $this->data);
 
+	}
+
+	public function edit_reciept($id)
+	{
+		$this->load->model('rv');
+		$this->data["info"] = $this->general_query->get_co_pro($id);
+		$this->data["list"] = $this->rv->get_rv($id);
+		$this->data["main_content"] = "vouchers/reciept_edit";
+		$this->load->view('includes/template2', $this->data);
+	}
+
+	public function edit_payment($id)
+	{
+		$this->load->model('rv');
+		$this->data["info"] = $this->general_query->get_co_pro($id);
+		$this->data["list"] = $this->pv->get_pv($id);
+		$this->data["main_content"] = "vouchers/payment_edit";
+		$this->load->view('includes/template2', $this->data);
 	}
 
 	public function print_reciept($id)
@@ -674,7 +680,7 @@ class Site extends CI_Controller {
 			$this->data['item_det'] = 'no content';
 		}
 		$this->data['action'] = $action;
-		$this->data['products'] = ' active';
+		$this->data['tools'] = ' active';
 		$this->data['main_content'] = 'item_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -685,7 +691,7 @@ class Site extends CI_Controller {
 		}else{
 			$this->data['all_items'] = 'no content';
 		}
-		$this->data['products'] = ' active';
+		$this->data['tools'] = ' active';
 		$this->data['main_content'] = 'all_pro';
 		$this->load->view('includes/template2', $this->data);
 	}
@@ -749,28 +755,12 @@ class Site extends CI_Controller {
 	public function all_bv(){
 		if($this->general_query->get_all_bv()){
 			$this->data['all_bv'] = $this->general_query->get_all_bv();
-		}else{
-			$this->data['all_bv'] = 'no content';
 		}
 		$this->data['bank'] = ' active';
 		$this->data['main_content'] = 'all_bv';
 		$this->load->view('includes/template2', $this->data);
 	}
 
-
-
-
- 	/////// Vouchers /////////
-
-	// public function jv(){
-	// 	$this->data['main_content'] = 'vouchers/journal';
-	// 	$this->load->view('includes/template', $this->data);
-	// }
-	
-	// public function rv(){
-	// 	$this->data['main_content'] = 'vouchers/reciept';
-	// 	$this->load->view('includes/template', $this->data);
-	// }
 
 	/////// Purchase Accounts //////////
 
@@ -883,26 +873,6 @@ class Site extends CI_Controller {
 		$this->data['main_content'] = 'sales/acc_sale_op_bal';
 		$this->load->view('includes/template', $this->data);
 	}
-
-	// public function co_list($id,$action){
-	// 	if ($action == "delete") {
-	// 	$this->load->model('general_query');
-
-	// 	if($this->general_query->del_co($id)){
-	// 		redirect('site/all_co');
-	// 	}
-	// 	}
-	// 	if($this->general_query->get_co_pro($id)){
-	// 		$this->data['co_det'] = $this->general_query->get_co_pro($id);
-	// 		$this->data['co_id'] = $id;
-	// 	}else{
-	// 		$this->data['co_det'] = 'no content';
-	// 	}
-	// 	$this->data['action'] = $action;
-	// 	$this->data['company'] = ' active';
-	// 	$this->data['main_content'] = 'co_pro';
-	// 	$this->load->view('includes/template2', $this->data);
-	// }
 
 	public function all_op_bal(){
 		if($this->general_query->get_all_op_bal()){

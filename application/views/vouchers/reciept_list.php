@@ -35,22 +35,26 @@
                                                 <th>Income Tax Amount</th>
                                                 <th>Witholding Tax Amount</th>
                                                 <th class="text-center">Print</th>
+                                                <th class="text-center">Edit</th>
                                                 <th class="text-center">Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($list as $row):?>
-                                            <tr>
-                                                <td><?php echo $row->id;?></td>
-                                                <td><?php echo $row->cust_id;?></td>
-                                                <td><?php echo $row->pay_type;?></td>
-                                                <td><?php echo $row->amnt;?></td>
-                                                <td><?php echo $row->inc_t_amnt;?></td>
-                                                <td><?php echo $row->wit_t_amnt;?></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/reciept_list/<?php echo $row->id?>/print" class="fa fa-print"></a></td>
-                                                <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/reciept_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
-                                            </tr>
-                                        <?php endforeach; ?>
+                                        <?php if(isset($list)): ?>
+                                            <?php foreach ($list as $row):?>
+                                                <tr>
+                                                    <td><?php echo $row->id;?></td>
+                                                    <td><?php echo $row->cust_id;?></td>
+                                                    <td><?php echo $row->pay_type;?></td>
+                                                    <td><?php echo $row->amnt;?></td>
+                                                    <td><?php echo $row->inc_t_amnt;?></td>
+                                                    <td><?php echo $row->wit_t_amnt;?></td>
+                                                    <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/reciept_list/<?php echo $row->id?>/print" class="fa fa-print"></a></td>
+                                                    <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/reciept_list/<?php echo $row->id?>/edit" class="glyphicon glyphicon-pencil"></a></td>
+                                                    <td class="text-center"><a href="<?php echo base_url(); ?>index.php/site/reciept_list/<?php echo $row->id?>/delete" class="glyphicon glyphicon-remove"></a></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                         </tbody>
                                        
                                     </table>

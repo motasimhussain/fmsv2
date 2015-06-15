@@ -3,22 +3,29 @@
 class Rv extends CI_Model {
 
 	function add(){
-		$data = array(
+		$cust_id = $this->input->post('cust_id');
+		$pay_type = $this->input->post('pay_type');
+		$amnt = $this->input->post('amnt');
+		$income_tax = $this->input->post('income_tax');
+		$witholding_tax = $this->input->post('witholding_tax');
+		$description = $this->input->post('description');
+		$inc_t_amnt = $this->input->post('inc_t_amnt');
+		$wit_t_amnt = $this->input->post('wit_t_amnt');
+		$date = $this->input->post('date');
 
-			'cust_id' => $this->input->post('cust_id'),
-			'pay_type' => $this->input->post('pay_type'),
-			'amnt' => $this->input->post('amnt'),
-			'income_tax' => $this->input->post('income_tax'),
-			'witholding_tax' => $this->input->post('witholding_tax'),
-			'description' => $this->input->post('description'),
-			'inc_t_amnt' => $this->input->post('inc_t_amnt'),
-			'wit_t_amnt' => $this->input->post('wit_t_amnt')
-		);
+		$this->db->query("
+			INSERT INTO reciept_v (cust_id,pay_type,amnt,income_tax,witholding_tax,description,inc_t_amnt,wit_t_amnt,date) 
+			VALUES ('$cust_id','$pay_type','$amnt','$income_tax','$witholding_tax','$description','$inc_t_amnt','$wit_t_amnt','$date')
+		");
+		$reciept_id = $this->db->insert_id();
+		$this->db->query("
+			INSERT INTO sales (reciept_id,ref_num,cmp_name,inv_for,type,pay_type,tot_amnt,dscr,date) 
+			VALUES ('$reciept_id','RV','$cust_id','1','reciept_voucher','debit','$amnt','$description','$date')
+		");
 
-		$query = $this->db->insert('reciept_v',$data);
 
-		if($query){
-			return ture;
+		if($this->db->insert_id()){
+			return true;
 		}else{
 			return false;
 		}
@@ -32,12 +39,27 @@ class Rv extends CI_Model {
 				$data[] = $row;
 			}
 			return $data;
+		}else{
+			return false;
 		}
 	}
 
 	function del($id){
-		$this->db->where('id',$id);
-		$this->db->delete('reciept_v');
+		$this->db->trans_start();
+
+			$this->db->where('reciept_id',$id);
+			$this->db->delete('sales');
+
+			$this->db->where('id',$id);
+			$this->db->delete('reciept_v');
+
+		$this->db->trans_complete();
+
+		if($this->db->trans_status() !== FALSE){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	function get_rv($id){
@@ -52,8 +74,6 @@ class Rv extends CI_Model {
 
 	function edit(){
 		$data = array(
-			'cust_id' => $this->input->post('cust_id'),
-			'pay_type' => $this->input->post('pay_type'),
 			'amnt' => $this->input->post('amnt'),
 			'income_tax' => $this->input->post('income_tax'),
 			'witholding_tax' => $this->input->post('witholding_tax'),
@@ -64,8 +84,15 @@ class Rv extends CI_Model {
 		$this->db->where('id',$this->input->post('id'));
 		$query = $this->db->update('reciept_v',$data);
 
+		$data = array(
+			'tot_amnt' => $this->input->post('amnt')
+		);
+
+		$this->db->where('reciept_id',$this->input->post('id'));
+		$query = $this->db->update('sales',$data);
+
 		if($query){
-			return ture;
+			return true;
 		}else{
 			return false;
 		}

@@ -19,7 +19,7 @@ class Bank_cust extends CI_Model {
 
 		$query = $this->db->insert('bank_trans',$data);
 		if($query){
-			return $this->up_cust($desc);
+			return true; //$this->up_cust($desc);
 		}else{
 			return false;
 		}
